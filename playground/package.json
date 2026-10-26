@@ -1,0 +1,19 @@
+{
+  "name": "roadster-badge-preview",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare-runtime": "node scripts/prepare.mjs",
+    "build:runtime": "bash scripts/build-pico3d-runtime.sh",
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/prepare.mjs && vite build",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "vite": "6.4.5"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

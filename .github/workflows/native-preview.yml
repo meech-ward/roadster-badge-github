@@ -1,0 +1,38 @@
+name: Native preview checks
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  native:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install native build tools
+        run: |
+          sudo apt-get update && sudo apt-get install -y cmake make
+          git clone --depth 1 --branch 6.0.13 https://github.com/emscripten-core/emsdk.git "$RUNNER_TEMP/roadster-emsdk"
+          git -C "$RUNNER_TEMP/roadster-emsdk" checkout --detach 35659964bc2762fffec0d257997fb61475f765b7
+          "$RUNNER_TEMP/roadster-emsdk/emsdk" install 6.0.13
+          "$RUNNER_TEMP/roadster-emsdk/emsdk" activate 6.0.13
+      - run: npm ci
+        working-directory: playground
+      - run: |
+          source "$RUNNER_TEMP/roadster-emsdk/emsdk_env.sh"
+          npm run build:runtime
+        working-directory: playground
+      - run: npx playwright install --with-deps chromium
+        working-directory: playground
+      - run: npm test
+        working-directory: playground
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-preview-evidence
+          path: playground/test-results/

@@ -1,0 +1,19 @@
+# Host tools and private device backups
+.venv/
+__pycache__/
+*.py[cod]
+backups/
+test-results/
+.cache/
+.env
+.env.*
+.DS_Store
+
+# Reproducible outputs
+dist/
+node_modules/
+playground/public/generated/
+playground/public/runtime/
+playground/playwright-report/
+playground/test-results/
+*.log

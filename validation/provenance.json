@@ -1,0 +1,66 @@
+{
+  "kind": "source-and-dependency-inventory",
+  "date": "2026-10-26",
+  "application": {
+    "files_sha256": {
+      "LICENSE": "50f47de3d194735d35ae0a581ae66e670a51e42e03361456eb0183a7d72339e8",
+      "README.md": "7b00ff85ba7d973a4a6835538b890731e223f5de143cac5a51e29f9317d12f87",
+      "__init__.py": "5088dc56e99562c65de9837a96b4ac4c4b6d70c81e17f5db371d2f5064dc557c",
+      "badge_controls.py": "e34497c16647311ccfc2afe813ed7ed8d30331cad86d0cf2e572863e48bd2feb",
+      "badge_motion.py": "be3d0ad9d8e66df8165f1c2a3310d5014afae816eece5fe357ae7e13258746bc",
+      "distant_models.py": "d2936dfb05fab4ecd63308079b851e70d30abcd19d85329933f79b5f26aa8698",
+      "fleet_models.py": "ba848e37902bba69f40223e6485623d7fc5d57857ff679d3a770ca6b6867fbcb",
+      "fleet_scene.py": "faea53680e768bc12de2935ab9242f61af0a20a85223627571015f41778dfe6e",
+      "ground_camera.py": "b6f01260e5775f6872ac29a24043c05782c7ff1f7bc7aadbbc3ad87fae853bc1",
+      "hud.py": "746016832976a2325f04c8b5df649427e4358033d7172723feaa11e17f5d4219",
+      "imu_profile.py": "0eccf7943fdb9ed0454a96ae8d7dc9f6d30072ae1a7940209d1164265cb10b99",
+      "model_assets.py": "624fb0aa301bf6e2f429d8d50fcc9d17b23cc444cbb3163e037dde3cf30656d0",
+      "motion.py": "193c1b1cf3319935f68ad49d895972c383cf55949132ee4825be36fb277916b4",
+      "physics.py": "d68fdcf6abd185c504562935e08e44f13c970b8b897c2f74ec94759f4fb90ca0",
+      "roadster_model.py": "3bedf2b37fce37360184c1e64bd4d983aaa71fcc3e522aa070839af208e484d6",
+      "scene.py": "facb3d3dd86b13541b24abcb538c700dfbd8770008c5cf3e64096a33d1e29ce6",
+      "scene_palette.py": "e09b4077157bf5d340843cc447aefb9a75b1aa6c45a0ad4c662424ac0ed499a9",
+      "scenery.py": "83a88aa90587941cdd9d291a80843c8c2aeda792f072a82f27024420ec100b49",
+      "speed_feedback.py": "72c829270985144dc4e4df939a9f3c47953fbc05b8a61462da431e23b2c734f6",
+      "stunt_feedback.py": "4b744295b091b6b1d34874cea367f4c9315e1a7d4807fa59fe4759b9ade1642e",
+      "tricks.py": "536f530e011c11e615cd92efb4fb9b5921d00cd1aaacf5148e3ff78e65c652d6",
+      "vehicle_spec.py": "de9edd3df2931b8d2d5fe72493307ba0e3a89af66ef269761435cb04336a5cea",
+      "world.py": "97e3a454347871a0cfcd332451d2d58f2170402e9350997f7c24facea540ed60"
+    },
+    "python_file_count": 21,
+    "imports_outside_app": [
+      "array",
+      "badgeware",
+      "gc",
+      "math",
+      "pico3d"
+    ],
+    "network_required": false,
+    "sibling_checkout_required": false,
+    "imported_models_textures_audio": false
+  },
+  "design": {
+    "vehicle": "Local body proportions, explicit mass distribution, frequency-based suspension and gameplay acceleration targets in vehicle_spec.py.",
+    "fan": "Equal-area surface samples, cubic clearance seal, filtered suction and pressure-centre torque.",
+    "air": "Isothermal ideal-gas reservoir, regulated delivery, shared mass/impulse budget.",
+    "solver": "Locally authored angular-momentum integration, ray/plane/box/ribbon queries and contact impulses.",
+    "models": "Handwritten Python geometry using public photographs as visual reference, with no image/mesh downloads at runtime."
+  },
+  "dependencies": {
+    "device": [
+      "compatible Universe firmware",
+      "MicroPython",
+      "badgeware",
+      "native pico3d"
+    ],
+    "optional_installer": [
+      "pyserial 3.5"
+    ],
+    "optional_preview": "Pinned platform sources built locally; generated sources, fonts and binaries excluded from release."
+  },
+  "limits": [
+    "Static source inventory is separate from runtime testing.",
+    "Vehicle appearance and physics are approximations, not manufacturer specifications.",
+    "Platform dependencies retain their own notices."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "fresh_local_source_build": true,
+  "provenance": {
+    "kind": "optional-native-pico3d-wasm",
+    "badgeware_wasm": "8cc5b05a1a07a823eb68ca1952b3603fe4d769bf",
+    "micropython": "4559a9a5a433f75ada6a01933c19878fd3a7dd81",
+    "picovector_micropython": "01e0b85c7539b6f43310cdaabb288e2fad1198be",
+    "picovector": "bff41fa90c92b92da5b09ec0dd7be4aca3733a00",
+    "backend": "asyncify-fast",
+    "native_renderer": true,
+    "render_cores": 1,
+    "hardware_timing_model": false,
+    "emscripten": "emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 6.0.13-git",
+    "sha256": {
+      "micropython.mjs": "01bdc97a0975038d9f78c5dcedc64fafb5ec3a01bec10b392cdbf5439771915a",
+      "micropython.wasm": "54bf62a1eda75ad910c655779fcc1e420a6c7ec2e60e7199ec5108569d8507bf"
+    }
+  },
+  "probe": {
+    "dimensions": [
+      320,
+      240
+    ],
+    "native_pico3d": true,
+    "scene_mesh_render_passed": true,
+    "frames": 10,
+    "hardware_timing_validated": false,
+    "frame_checksums": [
+      24546168,
+      24531864,
+      24526798,
+      24515474,
+      24498488,
+      24472860,
+      24447530,
+      24414750,
+      24377798,
+      24335184
+    ],
+    "passed": true,
+    "sha256": {
+      "micropython.mjs": "01bdc97a0975038d9f78c5dcedc64fafb5ec3a01bec10b392cdbf5439771915a",
+      "micropython.wasm": "54bf62a1eda75ad910c655779fcc1e420a6c7ec2e60e7199ec5108569d8507bf"
+    }
+  },
+  "production_bundle_built": true,
+  "binaries_redistributed": false
+}

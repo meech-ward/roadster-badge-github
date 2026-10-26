@@ -1,0 +1,26 @@
+name: Host and package checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  portable:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ['3.9', '3.13']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python tools/test.py
+      - run: python tools/check_repo.py
+      - run: python tools/package_repo.py
+      - run: python tools/install_badge.py plan --package dist/roadster_sandbox.zip
+      - run: python tools/export_models.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: host-${{ matrix.os }}-${{ matrix.python }}
+          path: test-results/host/

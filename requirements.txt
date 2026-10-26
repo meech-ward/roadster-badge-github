@@ -1,0 +1,2 @@
+# Host-side USB installer only. The game uses libraries already on the badge.
+pyserial==3.5
